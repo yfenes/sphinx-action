@@ -125,11 +125,19 @@ def build_docs(build_command, docs_directory):
             cwd=docs_directory,
         )
         
+        from time import sleep
+        print("Sleeping 2 seconds")
+        sleep(2)
+        
         print("Build command:", build_command)
-        print("OS environ", os.environ)
+        print("OS environ:", os.environ)
         print("Sphinx options:", sphinx_options)
         print("Docs directory:", docs_directory)
-        print("Return code", return_code)
+        print("Return code:", return_code)
+        print("The folders which should have the log_file has these files below:")
+        print(os.listdir(tempfile.gettempdir()))
+        print("=====end of ls=====")
+        
     else:
         build_command += shlex.split(sphinx_options)
         print("[sphinx-action] Running: {}".format(build_command))
