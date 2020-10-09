@@ -130,7 +130,6 @@ def build_docs(build_command, docs_directory):
         sleep(2)
         
         print("Build command:", build_command)
-        print("OS environ:", os.environ)
         print("Sphinx options:", sphinx_options)
         print("Docs directory:", docs_directory)
         print("Return code:", return_code)
