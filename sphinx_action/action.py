@@ -133,7 +133,7 @@ def build_docs(build_command, docs_directory):
         print("Sphinx options:", sphinx_options)
         print("Docs directory:", docs_directory)
         print("Return code:", return_code)
-        print("The folders which should have the log_file has these files below:")
+        print(f"The folder ({tempfile.gettempdir()}) which should have the log_file has these files below:")
         print(os.listdir(tempfile.gettempdir()))
         print("=====end of ls=====")
         
