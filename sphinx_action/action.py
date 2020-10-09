@@ -117,12 +117,19 @@ def build_docs(build_command, docs_directory):
         # which is exactly what we want.
         build_command += ["-e"]
         print("[sphinx-action] Running: {}".format(build_command))
+        
 
         return_code = subprocess.call(
             build_command,
             env=dict(os.environ, SPHINXOPTS=sphinx_options),
             cwd=docs_directory,
         )
+        
+        print("Build command:", build_command)
+        print("OS environ", os.environ)
+        print("Sphinx options:", sphinx_options)
+        print("Docs directory:", docs_directory)
+        print("Return code", return_code)
     else:
         build_command += shlex.split(sphinx_options)
         print("[sphinx-action] Running: {}".format(build_command))
