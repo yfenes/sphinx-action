@@ -126,10 +126,15 @@ def build_docs(build_command, docs_directory):
     else:
         build_command += shlex.split(sphinx_options)
         print("[sphinx-action] Running: {}".format(build_command))
+        
+        print(sphinx_options)
+        print(docs_directory)
 
         return_code = subprocess.call(
             build_command + shlex.split(sphinx_options), cwd=docs_directory
         )
+        
+        print(return_code)
 
     with open(log_file, "r") as f:
         annotations = parse_sphinx_warnings_log(f.readlines())
